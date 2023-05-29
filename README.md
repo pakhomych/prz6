@@ -26,12 +26,31 @@ clean:
 
 ## Сборка и тест проекта с санитайзерами
 
-`cmake . -D CMAKE_C_COMPILER=afl-cc -D CMAKE_CXX_COMPILER=afl-c++`
+- `cd text-file-reader`
 
-`AFL_USE_ASAN=1 AFL_USE_UBSAN=1 make -j20`
+- `cmake . -D CMAKE_C_COMPILER=afl-cc -D CMAKE_CXX_COMPILER=afl-c++`
 
-`find ./input -type f -exec ./words {} \;`
+- `AFL_USE_ASAN=1 AFL_USE_UBSAN=1 make -j20`
+
+- `find ./input -type f -exec ./words {} \;`
 
 ### Результат теста
 
 ![](./img/san-test.png)
+
+## Анализ прокрытия кода
+
+- `cd text-file-reader`
+
+- `cmake . -DCMAKE_C_COMPILER=cc -DCMAKE_CXX_COMPILER=g++ -DCMAKE_C_FLAGS="-g -O2 --coverage" -DCMAKE_CXX_FLAGS="-g -O2 --coverage" -DCMAKE_EXE_LINKER_FLAGS="-lgcov"`
+
+`make -j20`
+
+- `find ./input -type f -exec ./words {} \;`
+
+- `lcov -t "words" -o words.info -c -d .`
+- `genhtml -o report words.info`
+
+### Результаты анализа
+
+![](./coverage.png)
