@@ -9,20 +9,20 @@
 ### Makefile
 
 ```Makefile
-    CC = gcc
+CC = gcc
 
-    TARGET = words 
-    SOURCES = words.c
-    OBJECTS = $(SOURCES:.c=.o)
+TARGET = words 
+SOURCES = words.c
+OBJECTS = $(SOURCES:.c=.o)
 
-    all: $(TARGET)
+all: $(TARGET)
 
-    $(TARGET): $(OBJECTS)
-	    $(CC) $(OBJECTS) -o $(TARGET)
+$(TARGET): $(OBJECTS)
+	$(CC) $(OBJECTS) -o $(TARGET)
 
-    %.o: %.c
-	    $(CC) $(CFLAGS) -c $< -o $@
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
-    clean:
-	    rm -f $(OBJECTS) $(TARGET) *.gcda *.gcno core *~
+clean:
+	rm -f $(OBJECTS) $(TARGET) *.gcda *.gcno core *~
 ```
