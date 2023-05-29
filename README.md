@@ -2,13 +2,12 @@
 
 ## Исходный код
 
-В качестве тестового проекта используем: https://github.com/eduardoParedes/Text-File-Reader
+Выберем цель для нашего теста, а так же набор входных данных:
+- `git clone https://github.com/eduardoParedes/Text-File-Reader.git`
+- `git clone https://github.com/openpreserve/format-corpus.git`
 
-- Загрузим проект
+### Makefile
 
-    git clone https://github.com/eduardoParedes/Text-File-Reader.git
-
-- Сборка
 ```Makefile
     CC = gcc
 
