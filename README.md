@@ -32,6 +32,6 @@ clean:
 
 `find ./input -type f -exec ./words {} \;`
 
-## Результат теста
+### Результат теста
 
-!(./img/san-test.png)
+![](./img/san-test.png)
