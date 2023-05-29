@@ -54,3 +54,17 @@ clean:
 ### Результаты анализа
 
 ![](./img/coverage.png)
+
+## Фаззинг-тестирование
+
+- `cd text-file-reader`
+
+- `cmake . -D CMAKE_C_COMPILER=afl-cc -D CMAKE_CXX_COMPILER=afl-c++`
+
+- `AFL_USE_ASAN=1 AFL_USE_UBSAN=1 make -j20`
+
+- `afl-fuzz -i /input -o out -t 1000 ./reader -f 1 -l 1 -noImage @@`
+
+### Результаты тестов
+
+![](./img/fuzzing-test.png)
