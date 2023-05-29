@@ -53,4 +53,4 @@ clean:
 
 ### Результаты анализа
 
-![](./coverage.png)
+![](./img/coverage.png)
