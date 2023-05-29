@@ -63,7 +63,7 @@ clean:
 
 - `AFL_USE_ASAN=1 AFL_USE_UBSAN=1 make -j20`
 
-- `afl-fuzz -i /input -o out -t 1000 ./reader -f 1 -l 1 -noImage @@`
+- `afl-fuzz -i /input -o out -t 1000 ./words -f 1 -l 1 -noImage @@`
 
 ### Результаты тестов
 
